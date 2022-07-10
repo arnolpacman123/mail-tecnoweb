@@ -1,0 +1,936 @@
+<p><strong>CONSIDERACIONES</strong></p>
+<p style="text-align:left"><strong>-</strong> No ingresar caracteres especiales, la letra Ñ (ñ), ni caracteres con tíldes.</p>
+<p style="text-align:left"><strong>-</strong> El formato para fechas es AAAA-MM-DD, por ejemplo 1998-03-14.</p>
+<p style="text-align:left"><strong>-</strong> El sexo es el caracter 'F' para femenino y 'M' para masculino.</p>
+<p style="text-align:left"><strong>-</strong> Solo se aceptaran numeros de celular de hasta 12 digitos.</p>
+<p style="text-align:left"><strong>-</strong> Solo se aceptan contraseñas de 8 a 10 caracteres, minimo una minuscula, mayuscula, numero y caracter especial.</p>
+<table>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <thead>
+        <tr>
+            <th scope="col" colspan="2" style="text-align: center;">
+                Casos de uso Sistema para Conodominios Protecnosc
+                <br></br>
+            </th>
+        </tr>
+    </thead>
+<!-- +++++++++++++++++++++++++++ CASO DE USO 1: GESTIONAR USUARIOS ++++++++++++++++++++++++++++++++++++++ -->
+    <tbody>
+        
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU1: GESTIONAR PERFIL
+                </strong>
+            </td>
+        </tr> 
+<!-- +++++++++++++++++++++++++++++++++++++++ REGISTRAR UN USUARIO ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar Usuario
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => RESUSER:loginAdmin:PassAdmin:Nom:App:CI:Sexo:Telf:Email:ocupacion:login_user:Pass_user:Tipo{ADMINISTRADOR|PROPIETARIO}|[[cargo{DUENO|INQUILINO}]|fechafin]
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO1 => RESUSER:bolita@condiminio.com:123:Simon:Sagredo Cordova:9958112:M:76212101:simon@gmail.com:Estudiante:simon@condominio.com:simon123:ADMINISTRADOR
+                <br>
+                EJEMPLO2 => RESUSER:bolita@condominio.com:123:Juan:Perez:1234:M:70001123:juan@gmail.com:profesor:juan@condiminio.com:juan123:PROPIETARIO|DUENO
+                <br>
+                EJEMPLO3 => RESUSER:bolita@condominio.com:123:ericka:Quiroz:4321:F:7654321:ericka@gmail.com:contadora:ericka@condominio.com:ericka123:PROPIETARIO|Inquilino|2022-12-01
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++ MODIFICAR CONTRASEÑA DE ACCESO +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar contraseña de acceso
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => MODRESACC:login:New_pass:Old_pass
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => MODRESACC:juan@condominio.com:juancito123:juan123
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++ ELIMINAR ACCESO A UN USUARIO ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Eliminar Acceso a un usuario   //tambien los borra del id de casa y del propietario
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => DELRESUSER:login:Pass:Acc_Elim
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => DELRESUSER:soto@condominio.com:juan123:yordi@condominio.com
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++ MODIFICAR ELEMENTOS DE UN USUARIO +++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar elementos de un usuario
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => MODUSER:login:pass:telf:email:ocupacion
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => MODUSER:juan@condominio.com:juan123:123456:juan@gmail.com:profesor particular
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++ LISTAR USUARIO +++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Listar usuario
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => LISUSER:login:pass:[ADMINISTRADOR|COMITE|propietario{dueño}|*]
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => LISUSER:juan@condominio.com:juan123:*
+        <br>
+    </td>
+</tr>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++ REGISTRAR UN USUARIO A UNA CASA COMO RESIDENTE +++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Registrar un usuario a una casa como residente //Para que se añaden los inquilinos primero se debe registrar el propietario dueño
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => ADDUSERCASA:login:Pass:nomCondominio:nroArea:nroCasa
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => ADDUSERCASA:ericka@condominio.com:ericka123:1
+        <br>
+    </td>
+</tr>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++ MODIFICAR CARGO EN UN USUARIO +++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Modificar cargo en un usuario //si modificas el cargo es porque eres dueño propietario de una casa
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => MODCARGO:loginAdmin:PassAdmin:loginUser:cargo:[fecha]
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO1 => MODCARGO:bolita@condominio.com:123:juan@condominio.com:secretario
+        <br>
+        EJEMPLO2 => MODCARGO:bolita@condominio.com:123:ericka@condominio.com:presidente:2022-12-01
+    </td>
+</tr>
+
+
+<!-- +++++++++++++++++++++++++++ CASO DE USO 2: GESTIONAR CONDOMINIOS +++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU2: GESTIONAR CONDOMINIO
+                </strong>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ REGISTRAR UN INSUMO ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar un condominio
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => REGCON:loginAdmin:passAdmin:nom:ubic:datosUB:dimension
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => REGCON:bolita@condominio.com:123:Laguna Azul:La Guardia:Santa Cruz, Bolivia:100 hect
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ MODIFICAR DATOS DE UN CONDOMINIO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar datos de un condominio
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => MODCON:loginAdmin:passAdmin:nomOriginal[|nuevoNom]:ubic:datosUB:dimension
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO1 => MODCON:bolita@condominio.com:123:Laguna Azul|Condominio Laguna:km 14:Santa Cruz, Bolivia:500 hect
+                <br>
+                EJEMPLO2 => MODCON:bolita@condominio.com:123:Laguna Azul:La Guardia:Santa Cruz, La Guardia:100 hect
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ VER INFORMACION DE UN CONDOMINIO ESPECIFIO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Ver informacion de un condominio especifico
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => VERCON:login:pass:nom
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	    <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => VERCON:juan@condominio.com:juan123:Laguna Azul  
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ LISTAR TODOS LOS CONDOMINIOS QUE TIENE ALMACENADO EL SISTEMA ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <tr style="color: #000; background-color: #3b974c">
+        <td class="item-stock" colspan="2">
+            <strong>
+                Listar todos los condominios que tiene registrado el sistema
+            </strong>
+        </td>
+    </tr>
+    <tr style="background-color: #eeeeee">
+        <td class="item-stock" colspan="2">
+            FORMATO => LISCON:login:pass
+        </td>
+    </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <tr style="background-color: #eeeeee">
+        <td class="item-stock" colspan="2">
+            EJEMPLO => LISCON:juan@condominio.com:juan123
+            <br>
+        </td>
+    </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ ELIMINAR EL REGISTRO DE UN CONDOMINIO POR SU NOMBRE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Eliminar el registro de un condominio por su nombre
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => DELCON:loginAdmin:passAdmin:nom
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => DELCON:bolita@condominio.com:123:Laguna Azul
+        <br>
+    </td>
+</tr>
+
+<!-- +++++++++++++++++++++++++++ CASO DE USO 3:  GESTIONAR CASAS Y AREAS COMUNES +++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU3: GESTIONAR CASAS Y AREAS COMUNES
+                </strong>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ REGISTRAR UN AREA COMUN ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar un area comun
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => REGMAN:loginAdmin:passAdmin:nomCondominio:nroArea:tipo{urbano|area verde|parque|rural}:dimension
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => REGMAN:bolita@condominio.com:123:Laguna Azul:1:urbano:1000x1000
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ MODIFICAR UN AREA COMUN ESPECIFICO ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->        
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar un area comun especifico
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => MODMAN:loginAdmin:passAdmin:nomCondominio:nroArea:tipo{urbano|area verde|parque|rural}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => MODMAN:bolita@condominio.com:123:Laguna Azul:1:area verde
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ LISTAR TODAS LAS AREAS COMUNES DE UN CONDOMINIO EN PARTICULAR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todas las areas comunes de un condominio en particular
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISMAN:login:pass:nomCondominio
+            </td>
+        </tr>        
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISMAN:bolita@condominio.com:123:Laguna Azul
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ ELIMINAR EL REGISTRO DE UN AREA COMUN EN UN CONDOMINIO EN PARTICULAR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar la cantidad de un insumo de una formula existente
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => DELMAN:loginAdmin:passAdmin:nomCondominio:nroArea
+            </td>
+        </tr>        
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => DELMAN:bolita@condominio.com:123:Laguna Azul:1
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ AÑADIR CASA A UN MANZANO EN PARTICULAR +++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Añadir casa a un manzano en particular
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => ADDCASA:loginAdmin:passAdmin:nomCondominio:nroArea:nroCasa:dimension
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => ADDCASA:bolita@condominio.com:123:Laguna Azul:1:1:30x20mts
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ MODIFICAR ATRIBUTOS DE LA CASA +++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Modificar atributos de la casa  //modifica solo la dimension
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => MODCASA:loginAdmin:passAdmin:nomCondominio:nroArea:nroCasa:dimension
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => MODCASA:bolita@condominio.com:123:Laguna Azul:1:1:30x30mts     
+        <br>
+    </td>
+</tr>
+<!-- ++++++++++++++++++++++++++++++++++++ LISTAR TODAS LAS CASAS DE UN MANZANO +++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Listar todas las casas de un manzano
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => LISCASA:login:pass:nomCondominio:nroArea
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => LISCASA:bolita@condominio.com:123:Laguna Azul:1    
+        <br>
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++ CASO DE USO 4: GESTIONAR COMUNICADOS ++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU4: GESTIONAR COMUNICADOS
+                </strong>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ AÑADIR PARAMETROS A PRODUCCION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Añadir un comunicado
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => ADDCOMUN:loginComite:passComite:fecha:hora:asunto:tipo{reunion|actividades|recomendacion}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => ADDCOMUN:bolita@condominio.com:123:2022-01-10:1730:Instalacion de camaras de seguridad:reunion
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ LISTAR TODOS LOS COMUNICADOS ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todos los comunicados
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISCOMUN:login:pass:tipo{reunion|actividad|recomendacion|*}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISCOMUN:bolita@condominio.com:123:*
+                <br>
+            </td>
+        </tr>
+
+<!-- ++++++++++++++++++++++++++++++++++++ ELIMINAR UN COMUNICADO  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Eliminar un comunicado
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => DELCOMUN:loginComite:passComite:idComunicado 
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => DELCOMUN:bolita@condominio.com:123:1
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ AÑADIR UN ACTA PARA UN COMUNICADO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Añadir un acta para un comunicado //solo se añade si el tipo de comunicado que pertenece a una reunion
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => ADDACTA:loginComite:passComite:idComunicado:tipo{descriptiva|informativa}:accion:responsable:[conclusion]
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => ADDACTA:bolita@condominio.com:123:1:descriptiva:Instalador de camaras de seguridad:Juan Perez
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR TODAS LAS ACTAS DE UN COMUNICADO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Listar todas las actas de un comunicado
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => LISACTA:login:pass:idComunicado
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => LISACTA:bolita@condominio.com:123:1
+        <br>
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR TODOS LOS USUARIOS QUE ASISTIERON A DICHO COMUNICADO DE TIPO REUNION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Listar todos los usuarios que asistieron a dicho comunicado de tipo reunion
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => DETACTA:loginComite:passComite:idComunicado
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => DETACTA:bolita@condominio.com:123:1  
+        <br>
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++ AÑADIR UN COMENTARIO EN LA REUNION DE UN COMUNICADO DE TIPO REUNION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #3b974c">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Añadir un comentario en la reunion de un comunicado de tipo reunion
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO => ADDCOMEN:login:pass:idComunicado:[comentario] 
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => ADDCOMEN:bolita@condominio.com:123:1 
+        <br>
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++ CASO DE USO 5: GESTIONAR MENSAJES +++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU5: GESTIONAR MENSAJES
+                </strong>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ REGISTRAR UN MENSAJE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar un mensaje 
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => REGMEN:login:pass:asunto{reclamo|sugerencia|personal}:body:fecha:estado{curso|enviado}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => REGMEN:ericka@condominio.com:ericka123:reclamo:estoy en desacuerdo con ese comunicado:2022-01-25:curso
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ MODIFICAR ATRIBUTOS DE UN MENSAJE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar atributos de un mensaje  //solo modificas si el registro estuvo en curso
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => MODMEN:login:pass:idMensaje:asunto{reclamo|sugerencia|personal}:body:fecha:estado{curso|enviado}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => MODMEN:ericka@condominio.com:ericka123:1:reclamo:ahora si estoy de acuerdo:2022-02-25:enviado
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ ELIMINAR UN MENSAJE EN PARTICULAR  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->        
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Eliminar un mensaje en particular //No importa si ya se envio lo elimina
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => DELMEN:login:pass:idMensaje  
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => DELMEN:ericka@condominio.com:ericka123:1
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ LISTAR TODOS LOS MENSAJES  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->        
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todos los mensajes  //metodo para el usuario de tipo comite
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISMEN:loginComite:passComite:asunto{reclamo|sugerencia|personal|*}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISMEN:bolita@condominio.com:123:reclamo
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR TODOS LOS MENSAJES QUE ESCRIBIO EL USUARIO  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todos los mensajes que escribio el usuario  //mostraria de cualquier estado
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISUSERMEN:login:pass:estado{curso|enviado|*}
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISUSERMEN:ericka@condominio.com:ericka123:*
+                <br>
+            </td>
+        </tr>
+
+<!-- +++++++++++++++++++++++++++ CASO DE USO 6: GESTIONAR SERVICIOS +++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU6: GESTIONAR SERVICIOS
+                </strong>
+            </td>
+        </tr>
+    <!-- +++++++++++++++++++++++++++++++++ REGISTRAR UN SEVICIO PUBLICO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->            
+            <tr style="color: #000; background-color: #3b974c">
+                <td class="item-stock" colspan="2">
+                    <strong>
+                        Registrar un servicio publico
+                    </strong>
+                </td>
+            </tr>
+            <tr style="background-color: #eeeeee">
+                <td class="item-stock" colspan="2">
+                    FORMATO => REGSERVICE:loginAdmin:PassAdmin:nom:monto:fechaIni:fechaFin    
+                </td>
+            </tr>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => REGSERVICE:bolita@condominio.com:123:servicio de guardia:4000:2022-01-02:2022-12-02
+                <br>
+            </td>
+        </tr>
+    <!-- +++++++++++++++++++++++++++++++++ MODIFICAR UN SERVICIO PUBLICO  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <tr style="color: #000; background-color: #3b974c">
+                <td class="item-stock" colspan="2">
+                    <strong>
+                        Modificar un servicio publico
+                    </strong>
+                </td>
+            </tr>
+            <tr style="background-color: #eeeeee">
+                <td class="item-stock" colspan="2">
+                    FORMATO => MODSERVICE:loginAdmin:PassAdmin:idServicio:nom:monto:fechaIni:fechaFin       
+                </td>
+            </tr>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <tr style="background-color: #eeeeee">
+                <td class="item-stock" colspan="2">
+                    EJEMPLO => MODSERVICE:simon@condominio.com:simon123:1:servicio de guardia:5500:2022-12-02:2023-12-02
+                    <br>
+                </td>
+            </tr>
+    <!-- ++++++++++++++++++++++++++++++++++++ LISTAR EL HISTORIAL DE TODOS LOS SERVICIOS PUBLICOS AÑADIDOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <tr style="color: #000; background-color: #3b974c">
+                <td class="item-stock" colspan="2">
+                    <strong>
+                        Listar el historial de todos los servicios publicos añadidos
+                    </strong>
+                </td>
+            </tr>
+            <tr style="background-color: #eeeeee">
+                <td class="item-stock" colspan="2">
+                    FORMATO => LISSERVICE:loginAdmin:PassAdmin    
+                </td>
+            </tr>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISSERVICE:simon@condominio.com:simon123
+                <br>
+            </td>
+        </tr>
+    <!-- +++++++++++++++++++++++++++++++++ COMANDO PARA COBRAR EL SERVICIO A LOS DUEÑOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <tr style="color: #000; background-color: #3b974c">
+                <td class="item-stock" colspan="2">
+                    <strong>
+                        Comando para cobrar el servicio a los dueños
+                    </strong>
+                </td>
+            </tr>
+            <tr style="background-color: #eeeeee">
+                <td class="item-stock" colspan="2">
+                    FORMATO => ALTASERVICE:loginAdmin:PassAdmin:idServicio
+                </td>
+            </tr>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => ALTASERVICE:simon@condominio.com:simon123:1
+                <br>
+            </td>
+        </tr>
+    <!-- +++++++++++++++++++++++++++++++++ COMANDO PARA NO COBRAR EL SERVICIO A LOS DUEÑOS  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <tr style="color: #000; background-color: #3b974c">
+        <td class="item-stock" colspan="2">
+            <strong>
+                Comando para No cobrar el servicio a los dueños
+            </strong>
+        </td>
+    </tr>
+    <tr style="background-color: #eeeeee">
+        <td class="item-stock" colspan="2">
+            FORMATO => BAJASERVICE:loginAdmin:PassAdmin:idServicio
+        </td>
+    </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO => BAJASERVICE:simon@condominio.com:simon123:1
+        <br>
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++ CASO DE USO 7: GESTIONAR PAGOS +++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU7: GESTIONAR PAGOS
+                </strong>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR LOS SERVICIOS A PAGAR DEL USUARIO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar los servicios a pagar del usuario
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISPAGO:login:pass  
+            </td>
+        </tr>       
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISPAGO:soto@condominio.com:soto123  
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR EL HISTORIAL DE SERVICIOS PAGADOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar el historial de servicios pagados
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => HISPAGO:login:pass
+            </td>
+        </tr>       
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => HISPAGO:soto@condominio.com:soto123
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ PAGAR UNO O VARIOS SERVICIOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Pagar uno o varios servicios
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => REGPAGO:login:pass:idServicio1:idServicio2:idServicio3:...
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => REGPAGO:soto@condominio.com:soto123:3:7
+                <br>
+            </td>
+        </tr>
+
+        <!-- +++++++++++++++++++++++++++ CASO DE USO 8: GESTIONAR REPORTES Y ESTADISTICAS +++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #195a25;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU8: GESTIONAR REPORTES Y ESTADISTICAS
+                </strong>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR TODAS LAS AREAS COMUNES QUE NO ESTAN REGISTRADAS EN UN CONDOMINIO EN PARTICULAR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todas las areas comunes que no estan registradas en un condominio en particular
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISNOMAN:login:pass
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISNOMAN:bolita@condominio.com:123
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++ LISTAR TODOS LOS DUEÑOS PROPIETARIOS DE UN MANZANO EN PARTICULAR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todos los dueños propietarios de un manzano en particular
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISMANPROP:login:pass:nomCondominio:nroArea
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISMANPROP:bolita@condominio.com:123:Laguna Azul:1
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ LISTAR TODOS LOS SERVICIOS NO PAGADOS EN MORA DE TODOS LOS CLIENTES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #3b974c">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar todos servicios no pagados en mora de todos los clientes
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO => LISMORASERVICE:loginAdmin:passAdmin:nomCondominio:nroArea
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO => LISMORASERVICE:bolita@condominio.com:123:Laguna Azul:1
+                <br>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
